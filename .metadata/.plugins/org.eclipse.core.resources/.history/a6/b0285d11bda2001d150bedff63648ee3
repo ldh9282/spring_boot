@@ -1,0 +1,8 @@
+package com.in28minutes.learnspringframework.game;
+
+public class MarioGame {
+	
+	public void up() {
+		System.out.println("Jump");
+	}
+}
