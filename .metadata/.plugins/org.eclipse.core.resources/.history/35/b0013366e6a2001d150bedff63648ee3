@@ -1,0 +1,13 @@
+package com.in28minutes.learnspringframework;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class HelloWorldConfiguration {
+
+	
+	public String name() {
+		return "Ranga";
+	}
+	
+}

@@ -1,0 +1,18 @@
+package com.in28minutes.learnspringframework;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class App02HelloWorldSpring {
+	public static void main(String[] args) {
+		
+		System.out.println(new AnnotationConfigApplicationContext(HelloWorldConfiguration.class).getBean("name"));
+		
+		System.out.println(new AnnotationConfigApplicationContext(HelloWorldConfiguration.class).getBean("age"));
+		
+		System.out.println(new AnnotationConfigApplicationContext(HelloWorldConfiguration.class).getBean("person"));
+		
+		System.out.println(new AnnotationConfigApplicationContext(HelloWorldConfiguration.class).getBean("person2"));
+		
+		System.out.println(new AnnotationConfigApplicationContext(HelloWorldConfiguration.class).getBean("address2"));
+	}
+}
