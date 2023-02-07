@@ -1,0 +1,46 @@
+package com.in28minutes.learnspringframework.examples.g1;
+
+import java.util.Arrays;
+
+import org.springframework.beans.BeansException;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+import com.in28minutes.learnspringframework.examples.a1.DepInjectionLauncherApplication;
+import com.in28minutes.learnspringframework.examples.c1.DataService;
+
+class BusinessService {
+	private DataService dataService;
+
+	public DataService getDataService() {
+		return dataService;
+	}
+
+	public void setDataService(DataService dataService) {
+		this.dataService = dataService;
+	}
+	
+	
+}
+
+
+@Configuration
+@ComponentScan 
+public class CdiContextLauncherApplication {
+	
+	public static void main(String[] args) {
+		
+		try (var context =
+				new AnnotationConfigApplicationContext(
+						DepInjectionLauncherApplication.class)) {
+			
+			Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+			
+		} catch (BeansException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}
+
