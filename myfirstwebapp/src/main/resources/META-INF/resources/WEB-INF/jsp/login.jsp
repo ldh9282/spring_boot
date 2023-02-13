@@ -3,9 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>Login JSP</title>
 </head>
 <body>
-
+    <div id="result">
+        <p>Welcome to the login page!</p>
+    </div>
 </body>
 </html>
