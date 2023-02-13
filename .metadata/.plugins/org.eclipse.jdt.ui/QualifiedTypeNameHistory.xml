@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.in28minutes.learnspringframework.game.MarioGame"/>
-    <fullyQualifiedTypeName name="com.in28minutes.learnspringframework.game.SuperContraGame"/>
-    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.reactive.HttpHandlerAutoConfiguration.AnnotationConfig"/>
     <fullyQualifiedTypeName name="com.in28minutes.learnspringframework.HelloWorldConfiguration"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="com.in28minutes.learnspringframework.Address"/>
@@ -27,8 +24,6 @@
     <fullyQualifiedTypeName name="jakarta.annotation.PostConstruct"/>
     <fullyQualifiedTypeName name="jakarta.annotation.PreDestroy"/>
     <fullyQualifiedTypeName name="com.in28minutes.learnspringframework.examples.c1.DataService"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="com.in28minutes.learnspringframework.examples.g1.BusinessService"/>
     <fullyQualifiedTypeName name="jakarta.inject.Inject"/>
     <fullyQualifiedTypeName name="jakarta.inject.Named"/>
@@ -37,10 +32,32 @@
     <fullyQualifiedTypeName name="com.in28minutes.learnspringframework.examples.h1.XmlConfigurationLauncherApplication"/>
     <fullyQualifiedTypeName name="com.in28minutes.learnspringframework.game.GameRunner"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.context.properties.ConfigurationProperties"/>
+    <fullyQualifiedTypeName name="com.in28minutes.springboot.learnspringboot.CurrencyServiceConfiguration"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.core.JdbcTemplate"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.CommandLineRunner"/>
+    <fullyQualifiedTypeName name="com.in28minutes.springboot.learnjpaandhibernate.course.jdbc.CourseJdbcRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.core.BeanPropertyRowMapper"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.EntityManager"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.PersistenceContext"/>
+    <fullyQualifiedTypeName name="com.in28minutes.springboot.learnjpaandhibernate.course.jpa.CourseJpaRepository"/>
+    <fullyQualifiedTypeName name="jakarta.transaction.Transactional"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.in28minutes.springboot.learnjpaandhibernate.course.springdatajpa.CourseSpringDataJpaRepository"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.in28minutes.springboot.learnjpaandhibernate.course.Course"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 </qualifiedTypeNameHistroy>
