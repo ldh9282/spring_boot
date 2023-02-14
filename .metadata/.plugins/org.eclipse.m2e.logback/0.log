@@ -7286,3 +7286,49 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2023-02-14 23:57:32,324 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
 2023-02-14 23:59:10,361 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
 2023-02-14 23:59:10,367 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-14 23:59:10,369 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:04:05,428 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:04:05,428 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:04:05,432 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:04:22,670 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:04:22,670 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:04:22,675 [Worker-4: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:08:00,451 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:08:00,463 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:08:00,467 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:08:47,941 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:08:47,941 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:08:47,946 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:08:54,137 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:08:54,137 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:08:54,141 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:09:27,436 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:09:27,436 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:09:27,440 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:11:14,016 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:11:14,023 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 4 resources
+2023-02-15 00:11:14,027 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:11:53,595 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:11:53,596 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:11:53,599 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:12:16,170 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:12:16,170 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:12:16,172 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:12:19,380 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:12:19,380 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:12:19,383 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:12:58,735 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:12:58,736 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:12:58,740 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:14:08,405 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:14:08,406 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:14:08,409 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:14:21,591 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:14:21,592 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:14:21,596 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:14:42,727 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-02-15 00:14:42,727 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:14:42,730 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
+2023-02-15 00:23:24,409 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-02-15 00:23:24,416 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 5 resources
+2023-02-15 00:23:24,421 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\ldh92\Desktop\spring_boot\workspace_\myfirstwebapp\src\test\resources
