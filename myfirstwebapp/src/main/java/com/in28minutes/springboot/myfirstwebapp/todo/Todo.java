@@ -2,6 +2,13 @@ package com.in28minutes.springboot.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.bind.DefaultValue;
+
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 //Database (MySQL) 
 //Static List of todos => Database (H2, MySQL)
 
@@ -15,9 +22,10 @@ public class Todo {
 		this.targetDate = targetDate;
 		this.done = done;
 	}
-
+	
 	private int id;
 	private String username;
+	@Size(min = 10, message = "Enter at least 10 characters")
 	private String description;
 	private LocalDate targetDate;
 	private boolean done;
