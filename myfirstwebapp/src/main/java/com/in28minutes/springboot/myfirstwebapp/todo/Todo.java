@@ -2,18 +2,21 @@ package com.in28minutes.springboot.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.bind.DefaultValue;
-
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 //Database (MySQL) 
 //Static List of todos => Database (H2, MySQL)
 
+@Entity
 public class Todo {
-
+	
+	public Todo() {
+		
+	}
+	
 	public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
 		super();
 		this.id = id;
@@ -23,6 +26,8 @@ public class Todo {
 		this.done = done;
 	}
 	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String username;
 	@Size(min = 10, message = "Enter at least 10 characters")
@@ -31,7 +36,7 @@ public class Todo {
 	private boolean done;
 
 	public int getId() {
-		return id;
+ 		return id;
 	}
 
 	public void setId(int id) {
