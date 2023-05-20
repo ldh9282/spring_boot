@@ -1,9 +1,7 @@
 export default function FooterComponent() {
     return (
-        <footer className="footer">
-            <div className="container">
+        <div className="footer mt-5">
                 Your Footer
-            </div>
-        </footer>
+        </div>
     )
 }
