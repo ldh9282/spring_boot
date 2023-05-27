@@ -11,4 +11,9 @@ public interface ToDoService {
 	ToDo retrieveToDoByUsernameAndId(String username, int todo_id);
 
 	void deleteToDoByUsernameAndId(String username, int todo_id);
+
+	ToDo updateToDoByUsernameAndId(String username, int todo_id, ToDo toDo);
+
+	ToDo insertToDoByUsername(String username, ToDo toDo);
+
 }

@@ -39,7 +39,22 @@ public class ToDoServiceImpl implements ToDoService {
 
 	@Override
 	public void deleteToDoByUsernameAndId(String username, int todo_id) {
-		// we hope delete todo ... but not yet db connect 
+		// we hope delete todo ... but not yet db connect
+		System.out.println(">>> delete: " + username + ": " + todo_id);
+	}
+
+	@Override
+	public ToDo updateToDoByUsernameAndId(String username, int todo_id, ToDo toDo) {
+		// we hope update todo ... but not yet db connect
+		System.out.println(">>> update: " + username + ": " + todo_id + ": " + toDo);
+		return new ToDo(todo_id, username, toDo.getDescription(), false, toDo.getTargetDate());
+	}
+
+	@Override
+	public ToDo insertToDoByUsername(String username, ToDo toDo) {
+		// we hope insert todo ... but not yet db connect
+		System.out.println(">>> insert: " + username + ": " + toDo);
+		return new ToDo(99999, username, toDo.getDescription(), false, toDo.getTargetDate());
 	}
 	
 }

@@ -22,8 +22,11 @@ public class CrossOriginConfig {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
+					.allowedHeaders("*")
 					.allowedMethods("*")
-					.allowedOrigins("http://localhost:3000");
+					.allowedOrigins("*"); 
+					// 크롬브라우저 확장프로그램으로 테스트하기 위해 allowedOrigins 모두 풀음
+					// node server 만 풀어주려면 allowedOrigins(http://localhost:3000) 하면 됨
 			}
 			
 		};

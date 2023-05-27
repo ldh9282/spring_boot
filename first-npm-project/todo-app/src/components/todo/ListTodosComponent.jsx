@@ -1,13 +1,23 @@
 import { useState } from "react"
-import { deleteToDoByUsernameAndId, retrieveToDoListByUsername } from "./api/ToDoService"
+import { deleteToDoByUsernameAndId, retrieveToDoListByUsername } from "./api/ToDoApiService"
+import { useAuth } from "./security/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 export default function ListTodosComponent() {
+
+    const authContext = useAuth()
+
+    const username = authContext.username
+    
+    const navigate = useNavigate()
+    
     function setTheToDos(response) {
         setToDos(response.data)
     }
 
     function updateToDo(username, todo_id) {
-        debugger
+        alert('update: ' + username + ': ' + todo_id)
+        navigate('/todo/' + todo_id)
     }
 
     function deleteToDo(username, todo_id) {

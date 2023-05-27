@@ -22,7 +22,6 @@ export default function LoginComponent() {
 
     function handleSubmit() {
         if (authContext.login(username, password)) {
-            setShowErrorMessage(false);
             navigate(`/welcome/${username}`)
         } else {
             setShowErrorMessage(true);

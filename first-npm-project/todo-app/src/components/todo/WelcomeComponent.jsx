@@ -75,7 +75,7 @@ export default function WelcomeComponent() {
                 <div className="mt-5" style={{color: 'blue'}}>username: {user.username}<br/><br/>password: {user.password}</div>
             }
             
-            <div class="col-sm-6 mx-auto">
+            <div className="col-sm-6 mx-auto">
                 <label htmlFor="username">Username</label>
                 <input className="form-control" type="text" name="username" id="username" />
                 <button className="btn btn-success m-5" onClick={callUserByUsername}>Call User By username</button>
