@@ -1,0 +1,42 @@
+-- 시퀀스 생성
+CREATE SEQUENCE todo_seq START WITH 1 INCREMENT BY 1;
+
+-- 테이블 생성
+CREATE TABLE todo (
+  todo_id NUMBER,
+  username VARCHAR2(50),
+  description VARCHAR2(200),
+  done NUMBER(1),
+  target_date TIMESTAMP,
+  
+  CONSTRAINT pk_todo PRIMARY KEY (todo_id)
+);
+
+
+
+
+INSERT INTO todo (todo_id, username, description, done, target_date)
+VALUES (todo_seq.NEXTVAL, 'in28minutes', 'Eating', 0, TIMESTAMP '2024-05-30 10:00:00');
+
+INSERT INTO todo (todo_id, username, description, done, target_date)
+VALUES (todo_seq.NEXTVAL, 'in28minutes', 'Sleeping', 0, TIMESTAMP '2025-05-30 10:00:00');
+
+
+select
+    *
+from
+    todo
+where username = 'in28minutes'
+;
+
+select
+    *
+from
+    todo
+where 
+    username = 'in28minutes'
+    and todo_id = '1'
+;
+
+
+commit;

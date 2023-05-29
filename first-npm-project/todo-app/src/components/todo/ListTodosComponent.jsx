@@ -31,7 +31,7 @@ export default function ListTodosComponent() {
 
     const [toDos, setToDos] = useState([])
 
-    retrieveToDoListByUsername('user11')
+    retrieveToDoListByUsername(username)
         .then(setTheToDos)
 
     return (
@@ -59,8 +59,8 @@ export default function ListTodosComponent() {
                                 <td>{toDo.username}</td>
                                 <td>{toDo.description}</td>
                                 <td>{toDo.done ? 'Done' : 'Not Yet'}</td>
-                                <td>{toDo.targetDate.substring(0,10)}</td>
-                                <td>{toDo.targetDate.substring(11)}</td>
+                                <td>{toDo.target_date.substring(0,10)}</td>
+                                <td>{toDo.target_date.substring(11)}</td>
                                 <td><button className="btn btn-success" type="button" onClick={() => updateToDo(toDo.username, toDo.todo_id)}>Update</button></td>
                                 <td><button className="btn btn-danger" type="button" onClick={() => deleteToDo(toDo.username, toDo.todo_id)}>Delete</button></td>
                             </tr>
@@ -69,6 +69,7 @@ export default function ListTodosComponent() {
                     </tbody>
                 </table>
             </div>
+            <div className="btn btn-success m-5">Add New Todo</div>
         </div>
     )
 }

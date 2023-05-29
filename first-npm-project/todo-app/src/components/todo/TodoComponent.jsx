@@ -11,7 +11,7 @@ export default function TodoComponent() {
     // TodoApp.jsx 에서 Route path='/todo/:todo_id' 에서 todo_id 와 일치해야함
     const {todo_id} = useParams()
     const [description, setDescription] = useState('')
-    const [targetDate, setTargetDate] = useState('')
+    const [target_date, setTarget_date] = useState('')
     
     // 초기로딩 시 retrieveToDo, 그리고 todo_id 가 변경 시 retrieveToDo 을 모두 하는 useEffect
     // 제이쿼리로 치면 $(document).ready 에서 하고 $('#todo_id') 가 change 할때마다 하는 것
@@ -23,7 +23,7 @@ export default function TodoComponent() {
         retrieveToDoByUsernameAndId(username, todo_id)
             .then(response => {
                 setDescription(response.data.description)
-                setTargetDate(response.data.targetDate.substring(0, 10))
+                setTarget_date(response.data.target_date.substring(0, 10))
             })
             .catch(error => console.log('error', error))
     }
@@ -44,7 +44,7 @@ export default function TodoComponent() {
             .then(function(response) {
                 console.log(response)
                 setDescription(response.data.description)
-                setTargetDate(response.data.targetDate.substring(0, 10))
+                setTarget_date(response.data.target_date.substring(0, 10))
                 navigate('/todos')
             })
             .catch(function(error) {
@@ -56,7 +56,7 @@ export default function TodoComponent() {
         const errors = {}
 
         props.description.length === 0 && (errors.description = 'invalid description')
-        props.targetDate.length !== 10 && (errors.targetDate = 'invalid targetDate')
+        props.target_date.length !== 10 && (errors.target_date = 'invalid target_date')
 
         JSON.stringify(errors) === '{}' ? console.log('valid props') : console.log(errors)
         return errors
@@ -67,7 +67,7 @@ export default function TodoComponent() {
             <h1>Enter To-Do details</h1>
             <div className="mt-5">
                 
-                <Formik initialValues={ {description, targetDate} }
+                <Formik initialValues={ {description, target_date} }
                         enableReinitialize={true}
                         onSubmit={onSubmit}
                         validate={validate}
@@ -85,7 +85,7 @@ export default function TodoComponent() {
                                         className="alert alert-warning"/>
                                         
                                     <ErrorMessage 
-                                        name="targetDate"
+                                        name="target_date"
                                         component="div"
                                         className="alert alert-warning"/>
 
@@ -96,7 +96,7 @@ export default function TodoComponent() {
                                     </fieldset>
                                     <fieldset className="form-group">
                                         <label>Target Date</label>
-                                        <Field type="date" className="form-control" name="targetDate"></Field>
+                                        <Field type="date" className="form-control" name="target_date"></Field>
                                     </fieldset>
                                     <div>
                                         <button type="submit" className="btn btn-success mt-5">Save</button>

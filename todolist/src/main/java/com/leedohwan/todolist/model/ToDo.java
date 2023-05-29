@@ -14,5 +14,5 @@ public class ToDo {
 	private String username;
 	private String description;
 	private boolean done;
-	private LocalDateTime targetDate;
+	private LocalDateTime target_date;
 }
