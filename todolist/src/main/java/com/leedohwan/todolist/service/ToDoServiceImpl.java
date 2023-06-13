@@ -1,6 +1,6 @@
 package com.leedohwan.todolist.service;
 
-import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,28 +21,27 @@ public class ToDoServiceImpl implements ToDoService {
 	}
 
 	@Override
-	public ToDo retrieveToDoByUsernameAndId(String username, int todo_id) {
-		return toDoMapper.retrieveToDoListByUsernameAndId(username, todo_id);
+	public ToDo retrieveToDoById(int todo_id) {
+		return toDoMapper.retrieveToDoById(todo_id);
 	}
 
 	@Override
-	public void deleteToDoByUsernameAndId(String username, int todo_id) {
-		// we hope delete todo ... but not yet db connect
-		System.out.println(">>> delete: " + username + ": " + todo_id);
+	public void deleteToDoById(int todo_id) {
+		toDoMapper.deleteToDoById(todo_id);
 	}
 
 	@Override
-	public ToDo updateToDoByUsernameAndId(String username, int todo_id, ToDo toDo) {
-		// we hope update todo ... but not yet db connect
-		System.out.println(">>> update: " + username + ": " + todo_id + ": " + toDo);
-		return new ToDo(todo_id, username, toDo.getDescription(), false, toDo.getTarget_date());
+	public void updateToDo(ToDo toDo) {
+		ZoneId zone = ZoneId.of("GMT+09");
+		toDo.setTarget_date(toDo.getTarget_date().withZoneSameInstant(zone));
+		toDoMapper.updateToDo(toDo);
 	}
 
 	@Override
-	public ToDo insertToDoByUsername(String username, ToDo toDo) {
-		// we hope insert todo ... but not yet db connect
-		System.out.println(">>> insert: " + username + ": " + toDo);
-		return new ToDo(99999, username, toDo.getDescription(), false, toDo.getTarget_date());
+	public void insertToDo(ToDo toDo) {
+		ZoneId zone = ZoneId.of("GMT+09");
+		toDo.setTarget_date(toDo.getTarget_date().withZoneSameInstant(zone));
+		toDoMapper.insertToDo(toDo);
 	}
 	
 }

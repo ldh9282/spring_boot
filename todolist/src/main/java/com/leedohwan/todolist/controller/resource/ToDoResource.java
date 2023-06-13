@@ -27,25 +27,29 @@ public class ToDoResource {
 	
 	@GetMapping("users/{username}/todos/{todo_id}")
 	public ToDo retrieveToDoByUsernameAndId(@PathVariable String username, @PathVariable int todo_id) {
-		return toDoService.retrieveToDoByUsernameAndId(username, todo_id);
+		return toDoService.retrieveToDoById(todo_id);
 	}
 	
 	@DeleteMapping("users/{username}/todos/{todo_id}")
 	public void deleteToDoByUsernameAndId(@PathVariable String username, @PathVariable int todo_id) {
-		toDoService.deleteToDoByUsernameAndId(username, todo_id);
+		toDoService.deleteToDoById(todo_id);
 	}
 	
 	@PutMapping("users/{username}/todos/{todo_id}")
 	public ToDo updateToDoByUsernameAndId(@PathVariable String username, @PathVariable int todo_id,
 											@RequestBody ToDo toDo) {
-		ToDo theToDo = toDoService.updateToDoByUsernameAndId(username, todo_id, toDo);
-		return theToDo;
+		toDoService.updateToDo(toDo);
+		
+		ToDo theTodo = toDoService.retrieveToDoById(todo_id);
+		return theTodo;
 	}
 	
-	@PostMapping("users/{username}/todos")
+	@PostMapping("users/{username}/todos/new")
 	public ToDo insertToDoByUsernameAndId(@PathVariable String username,
 											@RequestBody ToDo toDo) {
-		ToDo theToDo = toDoService.insertToDoByUsername(username, toDo);
-		return theToDo;
+		toDoService.insertToDo(toDo);
+		
+		ToDo theTodo = toDoService.retrieveToDoById(toDo.getTodo_id());
+		return theTodo;
 	}
 }

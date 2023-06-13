@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { retrieveToDoByUsernameAndId, updateToDoByUsernameAndId } from "./api/ToDoApiService"
+import { retrieveToDoByUsernameAndId, updateToDoByUsernameAndId, createToDo } from "./api/ToDoApiService"
 import { useAuth } from "./security/AuthContext"
 import { useEffect, useState } from "react"
 import { ErrorMessage, Field, Form, Formik } from "formik"
@@ -20,12 +20,19 @@ export default function TodoComponent() {
     const navigate = useNavigate()
 
     function retrieveToDo() {
-        retrieveToDoByUsernameAndId(username, todo_id)
-            .then(response => {
-                setDescription(response.data.description)
-                setTarget_date(response.data.target_date.substring(0, 10))
-            })
-            .catch(error => console.log('error', error))
+
+        if (todo_id !== 'new') {
+            
+            retrieveToDoByUsernameAndId(username, todo_id)
+                .then(response => {
+                    setDescription(response.data.description)
+                    setTarget_date(response.data.target_date.substring(0, 10))
+                })
+                .catch(error => console.log('error', error))
+        } else {
+            console.log('Enter NEW To-Do Details!')
+        }
+        
     }
 
     function onSubmit(props) {
@@ -33,23 +40,39 @@ export default function TodoComponent() {
         const todo = props
 
         todo && (function() {
-            todo.id = todo_id   
+            todo.todo_id = todo_id   
             todo.username = username
             todo.done = false
         })()
 
         console.log(todo)
-        
-        updateToDoByUsernameAndId(username, todo_id, todo)
-            .then(function(response) {
-                console.log(response)
-                setDescription(response.data.description)
-                setTarget_date(response.data.target_date.substring(0, 10))
-                navigate('/todos')
-            })
-            .catch(function(error) {
-                console.log(error)
-            })
+
+        if (todo_id !== 'new') {
+            
+            updateToDoByUsernameAndId(username, todo_id, todo)
+                .then(function(response) {
+                    console.log(response)
+                    setDescription(response.data.description)
+                    setTarget_date(response.data.target_date.substring(0, 10))
+                    navigate('/todos')
+                })
+                .catch(function(error) {
+                    console.log(error)
+                })
+        } else {
+            todo.todo_id = -1
+            createToDo(username, todo)
+                .then(function(response) {
+                    console.log(response)
+                    setDescription(response.data.description)
+                    setTarget_date(response.data.target_date.substring(0, 10))
+                    navigate('/todos')
+                })
+                .catch(function(error) {
+                    console.log(error)
+                })
+        }
+
     }
 
     function validate(props) {
@@ -64,7 +87,15 @@ export default function TodoComponent() {
     }
     return (
         <div className="TodoComponent">
-            <h1>Enter To-Do details</h1>
+            {
+                todo_id === 'new' ? (
+                    <h1>Enter NEW To-Do details</h1>
+                    ) : (
+                    <h1>Enter To-Do details</h1>
+                )
+            }
+
+            
             <div className="mt-5">
                 
                 <Formik initialValues={ {description, target_date} }

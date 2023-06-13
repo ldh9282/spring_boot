@@ -7,13 +7,13 @@ import com.leedohwan.todolist.model.ToDo;
 public interface ToDoService {
 
 	List<ToDo> retrieveToDoListByUsername(String username);
+	
+	ToDo retrieveToDoById(int todo_id);
 
-	ToDo retrieveToDoByUsernameAndId(String username, int todo_id);
+	void deleteToDoById(int todo_id);
 
-	void deleteToDoByUsernameAndId(String username, int todo_id);
+	void updateToDo(ToDo toDo);
 
-	ToDo updateToDoByUsernameAndId(String username, int todo_id, ToDo toDo);
-
-	ToDo insertToDoByUsername(String username, ToDo toDo);
+	void insertToDo(ToDo toDo);
 
 }

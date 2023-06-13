@@ -6,38 +6,71 @@
  <!-- DAO 대신 매퍼인터페이스를 사용하는 경우, 
       namespace 속성에 패키지이름이 포함된 인터페이스이름을 설정합니다-->
 <mapper namespace="com.leedohwan.todolist.mapper.ToDoMapper">
-
-
-<resultMap type="java.util.HashMap" id="toDoMap">
-	<result property="todo_id" column="todo_id" />
-	<result property="username" column="username" />
-	<result property="description" column="description" />
-	<result property="done" column="done" />
-	<result property="targetDate" column="targetDate" />
-</resultMap>
-
-
-<!-- <select id="retrieveToDoListByUsername" resultMap="toDoMap"> -->
-<select id="retrieveToDoListByUsername" resultType="com.leedohwan.todolist.model.ToDo">
-	select
-	    *
-	from
-	    todo
-	where 
-		username = #{username}
-</select>
-
-<!-- <select id="retrieveToDoListByUsernameAndId" resultMap="toDoMap"> -->
-<select id="retrieveToDoListByUsernameAndId" resultType="com.leedohwan.todolist.model.ToDo">
-	select
-	    *
-	from
-	    todo
-	where 
-	    username = #{username}
-	    and todo_id = #{todo_id}
-</select>
-
+	<!-- 	List<ToDo> retrieveToDoListByUsername(String username); -->
+		
+	<!-- 	ToDo retrieveToDoById(int id); -->
+		
+	<!-- 	void deleteToDoById(int todo_id); -->
+	
+	<!-- 	void updateToDo(ToDo toDo); -->
+	
+	<!-- 	void insertToDo(ToDo toDo); -->
+	
+	
+	<select id="retrieveToDoListByUsername" resultType="com.leedohwan.todolist.model.ToDo">
+		select
+		    *
+		from
+		    todo
+		where 
+			username = #{username}
+	</select>
+	
+	<select id="retrieveToDoById" resultType="com.leedohwan.todolist.model.ToDo">
+		select
+		    *
+		from
+		    todo
+		where 
+		    todo_id = #{todo_id}
+	</select>
+	
+	<delete id="deleteToDoById">
+		delete from
+		    todo
+		where
+		    todo_id = #{todo_id}
+	</delete>
+	
+	<update id="updateToDo">
+		update
+		    todo
+		set
+		    description = #{description},
+		    done = #{done},
+		    target_date = #{target_date}
+		where
+		    todo_id = #{todo_id}
+	</update>
+	
+	<insert id="insertToDo">
+		<selectKey keyProperty="todo_id" resultType="int" order="BEFORE">
+			select todo_seq.NEXTVAL from dual
+		</selectKey>
+		INSERT INTO
+		    todo (
+		        todo_id,
+		        username,
+		        description,
+		        done,
+		        target_date
+		    )
+		VALUES
+		    (
+		        #{todo_id},
+		        #{username}, #{description}, #{done}, #{target_date}
+		    )
+	</insert>
 
 
 </mapper>
