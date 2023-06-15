@@ -7,3 +7,11 @@ export function retrieveUser() {
 export function retrieveUserByUsername(username) {
     return axios.get("http://localhost:8080/user/username/" + username)
 }
+
+export function authenticate(token) {
+    return axios.get("http://localhost:8080/authenticate", {
+        headers: {
+            Authorization: token
+        }
+    })
+}

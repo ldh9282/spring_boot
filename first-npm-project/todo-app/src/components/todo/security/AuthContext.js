@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react'
+import { authenticate } from '../api/UserApiService'
 
 // 1. Create  a context
 export const AuthContext = createContext()
@@ -13,15 +14,26 @@ export default function AuthProvider({ children }) {
     const [username, setUsername] = useState(false)
 
     function login(username, password) {
-        if (username === 'in28minutes' && password === 'dummy') {
-            setAuthenticated(true)
-            setUsername(username)
-            return true
-        } else {
-            setAuthenticated(false)
-            setUsername(null)   
-            return false
-        }
+        // username and password are encoded in base-64 as a token
+        const token = 'Basic ' + window.btoa(username + ':' + password)
+        authenticate(token)
+            .then(function(response) {
+                console.log(response)
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+        setAuthenticated(false)
+
+        // if (username === 'in28minutes' && password === 'dummy') {
+        //     setAuthenticated(true)
+        //     setUsername(username)
+        //     return true
+        // } else {
+        //     setAuthenticated(false)
+        //     setUsername(null)   
+        //     return false
+        // }
     }
 
     function logout() {

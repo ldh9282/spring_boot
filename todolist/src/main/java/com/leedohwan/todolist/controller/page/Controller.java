@@ -23,4 +23,9 @@ public class Controller {
 	public User retrieveUserByUsername(@PathVariable String username) {
 		return new User(username, "pw1");
 	}
+	
+	@GetMapping("/authenticate")
+	public User authenticate() {
+		return new User("in28minutes", "dummy");
+	}
 }
