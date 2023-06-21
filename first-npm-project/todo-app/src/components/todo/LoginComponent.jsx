@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from './security/AuthContext'
+import { AuthContext } from './security/AuthContext'
 
 export default function LoginComponent() {
     const [username, setUsername] = useState('in28minutes');
@@ -9,9 +9,7 @@ export default function LoginComponent() {
     const [showErrorMessage, setShowErrorMessage] = useState(false);
 
     const navigate = useNavigate();
-
-    const authContext = useAuth();
-
+    const authContext = useContext(AuthContext)
     function handleUsernameChange(event) {
         setUsername(event.target.value);
     }
@@ -20,12 +18,15 @@ export default function LoginComponent() {
         setPassword(event.target.value);
     }
 
-    function handleSubmit() {
-        if (authContext.login(username, password)) {
-            navigate(`/welcome/${username}`)
-        } else {
-            setShowErrorMessage(true);
+    async function handleSubmit() {
+        if (!await authContext.login(username, password)) {
+            debugger
+            console.log('LoginComponent.jsx: login fail...')
+            setShowErrorMessage(true)
+            return
         }
+        console.log('LoginComponent.jsx: login success...')
+        navigate(`/welcome/${username}`)
     }
 
 

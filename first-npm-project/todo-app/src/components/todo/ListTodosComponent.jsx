@@ -1,12 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { deleteToDoByUsernameAndId, retrieveToDoListByUsername } from "./api/ToDoApiService"
-import { useAuth } from "./security/AuthContext"
 import { useNavigate } from "react-router-dom"
+import AuthContextProvider, { AuthContext } from "./security/AuthContext"
 
 export default function ListTodosComponent() {
 
-    const authContext = useAuth()
-
+    const authContext = useContext(AuthContext)
     const username = authContext.username
     
     const navigate = useNavigate()

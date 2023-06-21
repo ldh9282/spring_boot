@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom"
 import { retrieveToDoByUsernameAndId, updateToDoByUsernameAndId, createToDo } from "./api/ToDoApiService"
-import { useAuth } from "./security/AuthContext"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { ErrorMessage, Field, Form, Formik } from "formik"
+import { AuthContext } from "./security/AuthContext"
 export default function TodoComponent() {
 
-    const authContext = useAuth()
+    const authContext = useContext(AuthContext)
     const username = authContext.username
     
     // TodoApp.jsx 에서 Route path='/todo/:todo_id' 에서 todo_id 와 일치해야함

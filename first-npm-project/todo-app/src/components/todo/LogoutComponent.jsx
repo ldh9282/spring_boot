@@ -1,4 +1,5 @@
 export default function LogoutComponent() {
+    console.log('LogoutComponent.jsx: logout success...')
     return (
         <div className='LogoutComponent'>
             <h1>You are logged out!</h1>
