@@ -14,18 +14,4 @@ public class Controller {
 		return "hello world!!!";
 	}
 	
-	@GetMapping("/user")
-	public User retrieveUser() {
-		return new User("user1", "pw1");
-	}
-	
-	@GetMapping("/user/username/{username}")
-	public User retrieveUserByUsername(@PathVariable String username) {
-		return new User(username, "pw1");
-	}
-	
-	@GetMapping("/authenticate")
-	public User authenticate() {
-		return new User("in28minutes", "dummy");
-	}
 }

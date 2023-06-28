@@ -20,7 +20,6 @@ export default function LoginComponent() {
 
     async function handleSubmit() {
         if (!await authContext.login(username, password)) {
-            debugger
             console.log('LoginComponent.jsx: login fail...')
             setShowErrorMessage(true)
             return
@@ -33,8 +32,11 @@ export default function LoginComponent() {
     return (
         <div className='Login'>
             <h1>Time to Login!</h1>
-            {showErrorMessage 
-                && <div className='errorMessage' >Autenticated Failed. Please check your credentials.</div>}
+            {
+                showErrorMessage && (
+                    <div className='errorMessage' >Autenticated Failed. Please check your credentials.</div>
+                )
+            }
 
             <div className='LoginForm'>
                 <div>

@@ -24,9 +24,8 @@ export default function TodoApp() {
     return (
         <div className="TodoApp">
 
+            <AuthContextProvider>
                 <BrowserRouter>
-                    <AuthContextProvider>
-
                         <HeaderComponent />
 
                         <Routes>
@@ -53,9 +52,9 @@ export default function TodoApp() {
                         </Routes>
                         
                         <FooterComponent />
-                    </AuthContextProvider>
 
                 </BrowserRouter>
+            </AuthContextProvider>
 
 
         </div>

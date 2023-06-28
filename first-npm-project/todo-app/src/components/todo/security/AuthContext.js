@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react'
-import { authenticate } from '../api/UserApiService'
+import { apiClient } from '../api/ApiClient'
+import { authenticateApiService } from '../api/AuthenticationApiService'
 
 
 export const AuthContext = createContext()
@@ -25,19 +26,27 @@ export default function AuthContextProvider({ children }) {
             logout()
         }
 
-        // username and password are encoded in base-64 as a token
-        const baToken = 'Basic ' + window.btoa(username + ':' + password)
 
         try {
-            const response =  await authenticate(token)
-            if (response.status !== 200) {
+            const response =  await authenticateApiService(username, password)
+
+            if (response.status === 200) {
+                const jwtToken = 'Bearer ' + response.data.token
+                setUseStateWhenLogin(username, jwtToken)
+                console.log('AuthContext.js: login success...')
+    
+                apiClient.interceptors.request.use(function(config) {
+                    console.log('AuthContext.js: intercepting and adding a token')
+                    config.headers.Authorization = jwtToken
+                    return config
+                })
+                return true
+            } else {
                 setUseStateWhenLogout()
                 console.log('AuthContext.js: login fail...')
                 return false
             }
-            setUseStateWhenLogin(username, baToken)
-            console.log('AuthContext.js: login success...')
-            return true
+
 
         } catch (error) {
             setUseStateWhenLogout()

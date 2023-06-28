@@ -10,7 +10,8 @@ import org.springframework.security.config.annotation.web.configurers.HttpBasicC
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
+// jwt 사용을 위해 주석처리함
+//@Configuration
 public class CustomSecurityConfig {
 	// Security Filter Chain
 	// 1. authenticate all requests

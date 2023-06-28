@@ -37,21 +37,19 @@ export default function TodoComponent() {
 
     function onSubmit(props) {
             
-        const todo = props
+        const todo = {
+            todo_id: todo_id,
+            username: username,
+            done: false,
+            description: props.description,
+            target_date: props.target_date,
+        }
 
-        todo && (function() {
-            todo.todo_id = todo_id   
-            todo.username = username
-            todo.done = false
-        })()
-
-        console.log(todo)
 
         if (todo_id !== 'new') {
-            
             updateToDoByUsernameAndId(username, todo_id, todo)
                 .then(function(response) {
-                    console.log(response)
+                    console.log('TodoComponent.jsx: Update Todo')
                     setDescription(response.data.description)
                     setTarget_date(response.data.target_date.substring(0, 10))
                     navigate('/todos')
@@ -77,12 +75,15 @@ export default function TodoComponent() {
 
     function validate(props) {
         const errors = {}
-
-        props.description.length === 0 && (errors.description = 'invalid description')
-        props.target_date.length !== 10 && (errors.target_date = 'invalid target_date')
-
-        JSON.stringify(errors) === '{}' ? console.log('valid props') : console.log(errors)
-        return errors
+        if (props.description.length === 0) {
+            errors.description = 'Invalid Description: you typed zero length...'
+            return errors
+        }
+        if (!props.target_date) {
+            errors.description = 'Invalid Target Date: you may not type target date...'
+            return errors
+        }
+       
         
     }
     return (
@@ -102,12 +103,10 @@ export default function TodoComponent() {
                         enableReinitialize={true}
                         onSubmit={onSubmit}
                         validate={validate}
-                        /* save 버튼 클릭시만 validate 하도록
-                         change, blur(focus out) 일때는 동작안함 */
                         validateOnChange={false} 
                         validateOnBlur={false}> 
                     {
-                        (props) => {
+                        () => {
                             return (
                                 <Form className="w-50 mx-auto">
                                     <ErrorMessage 

@@ -1,12 +1,5 @@
-import axios from "axios"
+import { apiClient } from "./ApiClient"
 
-
-const apiClient = axios.create(
-    {
-        baseURL: 'http://localhost:8080'
-    }
-)
-
-export function retrieveHelloWorld() {
+export function retrieveHelloWorldApiService() {
     return apiClient.get("/hello-world")
 }

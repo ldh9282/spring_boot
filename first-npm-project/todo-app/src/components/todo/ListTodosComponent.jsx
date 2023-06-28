@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { deleteToDoByUsernameAndId, retrieveToDoListByUsername } from "./api/ToDoApiService"
 import { useNavigate } from "react-router-dom"
 import AuthContextProvider, { AuthContext } from "./security/AuthContext"
@@ -8,33 +8,42 @@ export default function ListTodosComponent() {
     const authContext = useContext(AuthContext)
     const username = authContext.username
     
+    const [toDos, setToDos] = useState([])
     const navigate = useNavigate()
     
-    function setTheToDos(response) {
-        setToDos(response.data)
-    }
-
-    function updateToDo(username, todo_id) {
+    function updateToDo(todo_id) {
         navigate('/todo/' + todo_id)
     }
 
     function deleteToDo(username, todo_id) {
         deleteToDoByUsernameAndId(username, todo_id)
-            .then(
-                () => {
-                    console.log('Delete To-Do >>> ' + username + ': ' + todo_id)
-                }
-            )
+            .then(function() {
+                console.log('ListTodosComponet: Delete Todo')
+                retrieveToDoListByUsername(username)
+                    .then(function(response) {
+                        setToDos(response.data)
+                    })
+                    .catch(function(error) {
+                        console.log(error)
+                    })
+            })
     }
 
     function addTodo() {
         navigate('/todo/new')
     }
 
-    const [toDos, setToDos] = useState([])
 
-    retrieveToDoListByUsername(username)
-        .then(setTheToDos)
+
+    useEffect(function() {
+        retrieveToDoListByUsername(username)
+            .then(function(response) {
+                setToDos(response.data)
+            })
+            .catch(function(error) {
+                console.log(error)
+            })
+    }, [])
 
     return (
         <div className='container'>
@@ -65,7 +74,7 @@ export default function ListTodosComponent() {
                                 <td>{toDo.done ? 'Done' : 'Not Yet'}</td>
                                 <td>{toDo.target_date.substring(0, 10)}</td>
                                 <td>{toDo.target_date.substring(11, 19)}</td>
-                                <td><button className="btn btn-success" type="button" onClick={() => updateToDo(toDo.username, toDo.todo_id)}>Update</button></td>
+                                <td><button className="btn btn-success" type="button" onClick={() => updateToDo(toDo.todo_id)}>Update</button></td>
                                 <td><button className="btn btn-danger" type="button" onClick={() => deleteToDo(toDo.username, toDo.todo_id)}>Delete</button></td>
                             </tr>
                             )   

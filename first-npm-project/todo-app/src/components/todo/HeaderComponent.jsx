@@ -19,31 +19,31 @@ export default function HeaderComponent() {
                         <div className='collapse navbar-collapse'>
                             <ul className='navbar-nav'>
                                 {
-                                    isAuthenticated
-                                        &&
-                                    <>
-                                        <li className='nav-item fs-5'>
-                                            <Link className='nav-link' to='/welcome/in28minutes'>Home</Link>
-                                        </li>
-                                        <li className='nav-item fs-5'>
-                                            <Link className='nav-link' to='/todos'>Todos</Link>
-                                        </li>
-                                    </>
+                                    isAuthenticated && (
+                                        <>
+                                            <li className='nav-item fs-5'>
+                                                <Link className='nav-link' to='/welcome/in28minutes'>Home</Link>
+                                            </li>
+                                            <li className='nav-item fs-5'>
+                                                <Link className='nav-link' to='/todos'>Todos</Link>
+                                            </li>
+                                        </>
+                                    )
                                 }
                             </ul>
                         </div>
                         <ul className='navbar-nav'>
                             
                             {   
-                                !isAuthenticated 
-                                    ?
-                                <li className='nav-item fs-5'>
-                                    <Link className='nav-link' to='/login'>Login</Link>
-                                </li>
-                                    :
-                                <li className='nav-item fs-5'>
-                                    <Link className='nav-link' to='/logout' onClick={logout}>Logout</Link>
-                                </li>
+                                !isAuthenticated ?(
+                                    <li className='nav-item fs-5'>
+                                        <Link className='nav-link' to='/login'>Login</Link>
+                                    </li>
+                                ) : (
+                                    <li className='nav-item fs-5'>
+                                        <Link className='nav-link' to='/logout' onClick={logout}>Logout</Link>
+                                    </li>
+                                )
                                   
                             }
                         </ul>
