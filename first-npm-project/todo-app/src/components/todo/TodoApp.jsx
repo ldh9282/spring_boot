@@ -47,6 +47,11 @@ export default function TodoApp() {
                                     <TodoComponent />    
                                 </AutenticatedRoute>
                             } />
+                            <Route path='/todo2/:id' element={
+                                <AutenticatedRoute>
+                                    <TodoJpaComponent />
+                                </AutenticatedRoute>
+                            } />
 
                             <Route path='/*' element={<ErrorComponent />} />
                         </Routes>

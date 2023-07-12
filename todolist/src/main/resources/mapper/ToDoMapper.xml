@@ -24,6 +24,8 @@
 		    todo
 		where 
 			username = #{username}
+		order by
+			target_date			
 	</select>
 	
 	<select id="retrieveToDoById" resultType="com.leedohwan.todolist.model.ToDo">
